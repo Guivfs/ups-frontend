@@ -48,6 +48,7 @@ export class CandidaturasDialogComponent {
     this.vagasService.preencherVaga(idVaga, preenchimentoData).subscribe(
       (res) => {
         console.log('Vaga preenchida com sucesso:', res);
+        this.dialogRef.close();
       },
       (error) => {
         console.error('Erro ao preencher a vaga:', error);

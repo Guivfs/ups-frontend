@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-6">
-      <div class="box-desempenho" [ngClass]="{ 'blur': !loggedIn }">
+      <div class="box-desempenho" *ngIf="loggedIn">
         <h5>Seu desempenho até aqui</h5>
         <h6>Referente aos últimos 90 dias</h6>
         <h6>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="col-6">
-      <div class="box-cv-enviados" [ngClass]="{ 'blur': !loggedIn }">
+      <div class="box-cv-enviados" *ngIf="loggedIn">
         <h5>Total de CVs enviados</h5>
         <h6>Referente aos últimos 90 dias</h6>
         <h6>
