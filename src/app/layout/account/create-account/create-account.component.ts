@@ -20,11 +20,11 @@ export class CreateAccountComponent implements OnInit {
     private createAccountService: CreateAccountService,
     private route: Router,
     private toast: ToastrService,
-    public dialog: MatDialog  // Injeção do MatDialog
+    public dialog: MatDialog
   ) {
     this.formUsuario = this.fb.group({
       nomeCompleto: ["", Validators.required],
-      cep: ["", [Validators.required]],
+      cpf: ["", [Validators.required, Validators.minLength(11), Validators.maxLength(11)]], // Alterado de cep para cpf
       usuario: ["", [Validators.required, Validators.minLength(6)]],
       email: ["", [Validators.required, Validators.email]],
       senha: ["", [Validators.required, Validators.minLength(6)]],
@@ -35,6 +35,7 @@ export class CreateAccountComponent implements OnInit {
 
   onSubmit() {
     console.log('Aceitou os termos?', this.aceitouTermos); 
+    console.log(this.formUsuario.value)
     if (this.formUsuario.valid && this.aceitouTermos) {
       this.createAccountService.cadastrarUsuario(this.formUsuario.value).subscribe(
         (response) => {
@@ -54,11 +55,9 @@ export class CreateAccountComponent implements OnInit {
     }
   }
   
-
-  // Método para abrir o diálogo de Termos e Condições
   abrirTermosCondicoes(): void {
-    const dialogRef = this.dialog.open(PrivacyPoliciesDialogComponent,{
-      width:'800px'
+    const dialogRef = this.dialog.open(PrivacyPoliciesDialogComponent, {
+      width: '800px'
     });
   }
 

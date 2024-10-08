@@ -14,7 +14,7 @@ export class CreateAccountService {
       nomeUsuario: dadosUsuario.nomeCompleto,
       userUsuario: dadosUsuario.usuario,
       senhaUsuario: dadosUsuario.senha, 
-      cepUsuario: dadosUsuario.cep,
+      cpfUsuario: dadosUsuario.cpf,
       emailUsuario: dadosUsuario.email
     };
 

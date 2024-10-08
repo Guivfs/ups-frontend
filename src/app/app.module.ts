@@ -49,6 +49,7 @@ import { PerfilUsuarioDialogComponent } from './layout/navbar/itens-navbar/vagas
 import { CandidaturasDialogComponent } from './layout/navbar/itens-navbar/vagas/vagas-empresa/dialog/candidatura/candidaturas-dialog/candidaturas-dialog.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { CentralAjudaComponent } from './layout/central-ajuda/central-ajuda.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { MatDividerModule } from '@angular/material/divider';
     VisualizacaoIndividualVagaComponent,
     PerfilUsuarioDialogComponent,
     CandidaturasDialogComponent,
+    CentralAjudaComponent,
   ],
   imports: [
     MatDatepickerModule,

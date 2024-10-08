@@ -1,0 +1,33 @@
+.central-ajuda-container {
+    margin: 0 auto;
+    background-color: whitesmoke;
+  }
+  
+  .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  .card i {
+    font-size: 50px;
+  }
+  
+  .btn-color {
+    background-color: #4a427c;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+  
+  .btn-color:hover {
+    background-color: #6c61b2;
+    color: #ffffff;
+  }

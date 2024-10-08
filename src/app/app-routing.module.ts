@@ -15,6 +15,7 @@ import { PrivacyPoliciesDialogComponent } from './layout/termsAndConditions/priv
 import { PrivacyPoliciesComponent } from './layout/termsAndConditions/privacy-policies/privacy-policies.component';
 import { ResultadoPesquisaComponent } from './layout/navbar/itens-navbar/vagas/vagas-usuario/resultado-pesquisa/resultado-pesquisa.component';
 import { VisualizacaoIndividualVagaComponent } from './layout/navbar/itens-navbar/vagas/vagas-usuario/resultado-pesquisa/visualizacao-individual-vaga/visualizacao-individual-vaga.component';
+import { CentralAjudaComponent } from './layout/central-ajuda/central-ajuda.component';
 
 const routes: Routes = [
   { path: 'login', component: AuthenticationComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'termos-condicoes', component: PrivacyPoliciesComponent },
   { path: 'politicas-privacidade', component: PrivacyPoliciesComponent },
   { path: 'termos-condicoes-dialog', component: PrivacyPoliciesDialogComponent },
+  { path: 'central-ajuda', component:CentralAjudaComponent},
   { path: 'resultados-pesquisa', component: ResultadoPesquisaComponent },
   { path: 'visualizar-vaga/:id', component: VisualizacaoIndividualVagaComponent },
   { path: 'home', component: HomeComponent }, // Definindo a home como padrão

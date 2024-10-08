@@ -20,7 +20,7 @@ export class UpdateAccountComponent implements OnInit {
   ) {
     this.profileFormUser = this.fb.group({
       nomeCompleto: ['', Validators.required],
-      cep: ['', Validators.required],
+      cpf: ['', Validators.required],
       usuario: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required]
@@ -31,7 +31,7 @@ export class UpdateAccountComponent implements OnInit {
     this.detailsAccountService.getUser().subscribe(user => {
       this.profileFormUser.patchValue({
         nomeCompleto: user.nomeUsuario,
-        cep: user.cepUsuario,
+        cpf: user.cpfUsuario,
         usuario: user.userUsuario,
         email: user.emailUsuario,
         senha: ""
@@ -45,7 +45,7 @@ export class UpdateAccountComponent implements OnInit {
   updateAccount(): void {
     const userData = {
       nomeUsuario: this.profileFormUser.value.nomeCompleto,
-      cepUsuario: this.profileFormUser.value.cep,
+      cpfUsuario: this.profileFormUser.value.cpf,
       userUsuario: this.profileFormUser.value.usuario,
       emailUsuario: this.profileFormUser.value.email,
       senhaUsuario: this.profileFormUser.value.senha,
