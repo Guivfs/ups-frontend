@@ -1,0 +1,23 @@
+.container-fluid {
+  padding-top: 20px;
+  background-color: white;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .btn-sm {
+    margin-top: 10px;
+  }
+}

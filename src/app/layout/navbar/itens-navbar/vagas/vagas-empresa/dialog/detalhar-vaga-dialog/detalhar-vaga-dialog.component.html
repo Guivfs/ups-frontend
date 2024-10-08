@@ -1,0 +1,21 @@
+<div class="detalhar-vaga-dialog">
+  <div *ngIf="vaga">
+    <h2>{{ vaga.tituloVaga }}</h2>
+    <p><strong>Descrição:</strong> {{ vaga.descVaga }}</p>
+    <p><strong>Localização:</strong> {{ vaga.localizacaoVaga }}</p>
+    <p><strong>Valor do Pagamento:</strong> {{ vaga.valorPagamento | currency:'BRL' }}</p>
+    <p><strong>Status da Vaga:</strong>
+      <span
+        [ngClass]="{ 'status-aberta': vaga.statusVaga === 'Aberta', 'status-preenchida': vaga.statusVaga === 'Preenchida' }">
+        {{ vaga.statusVaga }}
+      </span>
+    </p>
+    <p><strong>Data de Criação:</strong> {{ vaga.dataCriacao }}</p> 
+    
+    <div *ngIf="vaga.usuarioPreenchido && vaga.statusVaga === 'Preenchida'">
+      <h3>Informações do Candidato</h3>
+      <p><strong>Nome:</strong> {{ vaga.usuarioPreenchido.nomeUsuario }}</p>
+      <p><strong>Email:</strong> {{ vaga.usuarioPreenchido.emailUsuario }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<a href="/"><img src="../../../../assets/icons/logo.png" alt="logo" class="logo" /></a>
+<div class="container">
+  <div class="div-logo"></div>
+  <br />
+  <div class="row">
+    <div class="col-2 alinhar-centro"></div>
+    <div class="col-8 alinhar-centro caixa-branca">
+      <div class="container d-flex justify-content-center pb-3 pt-2">
+        <h5 class="cor-text"><b>Cadastro para Empresas</b></h5>
+      </div>
+      <div class="container">
+        <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-6 alinhar-centro border-direita vertical">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nome da empresa*"
+                  formControlName="nomeEmpresa"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Área de atuação*"
+                  formControlName="areaAtuacaoEmpresa"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email corporativo*"
+                  formControlName="emailEmpresa"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Senha*"
+                  formControlName="senhaEmpresa"
+                  required
+                />
+                <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('senhaEmpresa')">
+                  A senha deve conter pelo menos 6 caracteres.
+                </div>
+              </div>
+              <div class="mb-4">
+                <textarea
+                  class="form-control"
+                  placeholder="Descrição da empresa*"
+                  formControlName="descEmpresa"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-6 vertical">
+              <div class="container">
+                <div class="row">
+                  <div class="mb-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="CNPJ*"
+                      formControlName="CNPJEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Razão social*"
+                      formControlName="razaoSocialEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Ramo*"
+                      formControlName="ramoEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Número de funcionários*"
+                      formControlName="numeroFuncionariosEmpresa"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 p-2 mt-3 justify-content-center flex-column align-items-center">
+                    <input type="checkbox" class="form-check-input me-2" name="termos" [(ngModel)]="aceitouTermos" (change)="aceitouTermos = !aceitouTermos" />
+                    <span class="mb-2">
+                      Eu li e aceito os
+                      <a class="link cor-text" style="font-weight: bold; cursor: pointer;" (click)="abrirTermosCondicoes()">Termos e Condições</a>.
+                    </span>
+                    <button class="btn btn-color form-control alinhar-centro mt-2" type="submit">Cadastrar-se</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-4 mt-2 text-end">
+              <p>
+                Já tem sua conta?
+                <a href="login" class="link cor-text"><b>Entrar em sua conta</b></a>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-2 alinhar-centro"></div>
+  </div>
+</div>

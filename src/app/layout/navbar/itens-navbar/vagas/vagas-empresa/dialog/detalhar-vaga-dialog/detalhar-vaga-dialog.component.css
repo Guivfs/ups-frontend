@@ -1,0 +1,15 @@
+.status-aberta {
+  color: green;
+  font-weight: bold;
+}
+
+.status-preenchida {
+  color: red;
+  font-weight: bold;
+}
+
+.detalhar-vaga-dialog {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+}

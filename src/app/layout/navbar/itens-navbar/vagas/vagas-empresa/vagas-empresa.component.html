@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row align-items-center mb-3">
+    <div class="col-md-6 col-sm-12">
+      <h2>Gerenciamento de Vagas</h2>
+    </div>
+    <div class="col-md-6 col-sm-12 text-md-end text-sm-start">
+      <button type="button" class="btn btn-dark btn-sm" (click)="openDialog()">Nova Vaga +</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 pb-5">
+      <div *ngIf="isLoading" class="text-center my-5">
+        <div class="spinner-border text-dark" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div *ngIf="hasError" class="alert alert-danger text-center" role="alert">
+        Não encontramos nenhuma vaga disponivel!
+      </div>
+
+      <div *ngIf="!isLoading && !hasError">
+        <table class="table table-responsive table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Título</th>
+              <th scope="col">Data de Criação</th>
+              <th scope="col">Status</th>
+              <th scope="col">Localização</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vaga of dataSource.data">
+              <th scope="row">{{ vaga.idVaga }}</th>
+              <td>{{ vaga.tituloVaga }}</td>
+              <td>{{ vaga.dataCriacao | date:'dd/MM/yyyy' }}</td>
+              <td>{{ vaga.statusVaga }}</td>
+              <td>{{ vaga.localizacaoVaga }}</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm me-2" (click)="verDetalhes(vaga)">Ver</button>
+                <button type="button" class="btn btn-warning btn-sm me-2" (click)="editarVaga(vaga)">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm me-2" (click)="excluirVaga(vaga)">Excluir</button>
+                <button *ngIf="vaga.statusVaga === 'Aberta'" type="button" class="btn btn-dark btn-sm me-2" (click)="openCandidaturasDialog(vaga)">Candidaturas</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
