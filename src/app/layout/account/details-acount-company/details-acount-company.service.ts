@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { enviroment } from '../../../../enviroments/enviroment';
+import { environment } from '../../../../enviroments/enviroment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetailsAcountCompanyService {
-  private apiUrl = enviroment.baseUrlBackend;
+  private apiUrl = environment.baseUrlBackendProd;
   private idCompany = this.authenticationService.getUserId()
 
   constructor(private authenticationService:AuthenticationService, private http:HttpClient) { }

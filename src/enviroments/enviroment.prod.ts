@@ -1,3 +1,5 @@
 export const environment = {
-    production: true,
-  };
+  production: true,
+  baseUrlBackendProd: 'https://ups-backend-production.up.railway.app',
+  token: 'token'
+};

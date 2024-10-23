@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { enviroment } from '../../../../enviroments/enviroment';
+import { environment } from '../../../../enviroments/enviroment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,6 @@ export class CreateAccountService {
       emailUsuario: dadosUsuario.email
     };
 
-    return this.http.post(`${enviroment.baseUrlBackend}/registro-usuario`, body);
+    return this.http.post(`${environment.baseUrlBackendProd}/registro-usuario`, body);
   }
 }

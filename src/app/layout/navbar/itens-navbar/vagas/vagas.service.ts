@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { enviroment } from '../../../../../enviroments/enviroment';
+import { environment } from '../../../../../enviroments/enviroment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VagasService {
-  private apiUrl = `${enviroment.baseUrlBackend}/vagas`;
-  private apiUrlStandart = `${enviroment.baseUrlBackend}`;
+  private apiUrl = `${environment.baseUrlBackendProd}/vagas`;
+  private apiUrlStandart = `${environment.baseUrlBackendProd}`;
 
   constructor(private http: HttpClient) { }
 

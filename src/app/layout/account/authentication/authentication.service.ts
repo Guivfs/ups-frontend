@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, catchError, map } from "rxjs";
-import { enviroment } from "../../../../enviroments/enviroment";
+import { environment } from "../../../../enviroments/enviroment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -10,7 +10,7 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient) {}
 
   public login(email: string, senha: string): Observable<any> {
-    const url = `${enviroment.baseUrlBackend}/login`;
+    const url = `${environment.baseUrlBackendProd}/login`;
 
     return this.httpClient
       .post(url, { email, senha }, { responseType: "json" })
