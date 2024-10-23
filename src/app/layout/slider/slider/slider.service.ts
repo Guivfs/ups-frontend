@@ -11,6 +11,6 @@ export class SliderService {
 
   //Metodo no qual trás a lista do tipo any, utilizando a lib do http client
   getVagas(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8080/vagas/buscar');
+    return this.http.get<any[]>('https://ups-backend-production.up.railway.app/vagas/buscar');
   }
 }
