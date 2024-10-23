@@ -1,71 +1,68 @@
-<a routerLink="/"> <img
-  src="../../../../assets/icons/logo.png"
-  alt="logo"
-  class="logo"
-/>
+<a routerLink="/">
+  <img src="../../../../assets/icons/logo.png" alt="logo" class="logo img-fluid" />
 </a>
+
 <div class="container">
-  <div class="div-logo">
-  </div>
-
-  <div class="div-login">
-    <div class="login">
-      <div class="div-login-texto">
-        <h4 class="escrita">Entrar com</h4>
-      </div>
-      <div class="div-login-botoes">
-        <button class="botao-login">
-          <img src="../../../../assets/icons/google.png" width="25px" />
-        </button>
-        <button class="botao-login">
-          <img src="../../../../assets/icons/facebook.png" width="25px" />
-        </button>
-        <button class="botao-login">
-          <img
-            src="../../../../assets/icons/apple.png"
-            width="26px"
-            style="padding-bottom: 1px"
-          />
-        </button>
-      </div>
-
-      <div class="line-text">
-        <span><b class="escrita">ou</b></span>
-      </div>
-
-      <form [formGroup]="formLogin">
-        <div class="input-group input-login">
-          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-          <input
-            type="email"
-            class="form-control border"
-            placeholder="Email"
-            aria-label="Email"
-            formControlName="email"
-          />
-          <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('email')">O usuário deve conter pelo menos 6 caracteres.</div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="login p-4">
+        <div class="div-login-texto">
+          <h4 class="escrita text-center">Entrar com</h4>
         </div>
-        <div class="input-group input-login">
-          <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
-          <input
-            type="password"
-            class="form-control border"
-            placeholder="Senha"
-            aria-label="Senha"
-            formControlName="senha"
-          />
-          <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('senha')">A senha deve conter pelo menos 6 caracteres.</div>
+        <div class="div-login-botoes text-center">
+          <button class="botao-login">
+            <img src="../../../../assets/icons/google.png" width="25px" />
+          </button>
+          <button class="botao-login">
+            <img src="../../../../assets/icons/facebook.png" width="25px" />
+          </button>
+          <button class="botao-login">
+            <img src="../../../../assets/icons/apple.png" width="26px" style="padding-bottom: 1px" />
+          </button>
         </div>
-          <div class="form-text text-danger col-12 div-checkbox" *ngIf="isFormControlInvalid('termsConditions')">É necessario aceitar os termos e condições.</div>
-        <div class="d-grid d-md-block div-botao-login text-center">
-          <button class="btn btn-color" type="button" [disabled]="!formLogin.valid" (click)="submitForm()">Entrar</button>
-        </div>
-      </form>
 
-      <div class="div-criar-conta">
-        <p>
-          Não tem uma conta? <a routerLink="/criar-conta" class="link"><b>Cadastre-se grátis aqui.</b></a>
-        </p>
+        <div class="line-text">
+          <span><b class="escrita">ou</b></span>
+        </div>
+
+        <form [formGroup]="formLogin">
+          <div class="input-group input-login mb-3">
+            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+            <input
+              type="email"
+              class="form-control border"
+              placeholder="Email"
+              aria-label="Email"
+              formControlName="email"
+            />
+            <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('email')">
+              O usuário deve conter pelo menos 6 caracteres.
+            </div>
+          </div>
+          <div class="input-group input-login mb-3">
+            <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+            <input
+              type="password"
+              class="form-control border"
+              placeholder="Senha"
+              aria-label="Senha"
+              formControlName="senha"
+            />
+            <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('senha')">
+              A senha deve conter pelo menos 6 caracteres.
+            </div>
+          </div>
+          <div class="form-text text-danger col-12 mb-3" *ngIf="isFormControlInvalid('termsConditions')">
+            É necessário aceitar os termos e condições.
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-color" type="button" [disabled]="!formLogin.valid" (click)="submitForm()">Entrar</button>
+          </div>
+        </form>
+
+        <div class="div-criar-conta text-center mt-3">
+          <p>Não tem uma conta? <a routerLink="/criar-conta" class="link"><b>Cadastre-se grátis aqui.</b></a></p>
+        </div>
       </div>
     </div>
   </div>

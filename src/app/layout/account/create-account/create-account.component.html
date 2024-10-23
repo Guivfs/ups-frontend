@@ -1,82 +1,51 @@
-<a routerLink="/"><img
-  src="../../../../assets/icons/logo.png"
-  alt="logo"
-  class="logo"
-/>
-</a>
+<a routerLink="/"><img src="../../../../assets/icons/logo.png" alt="logo" class="logo img-fluid" /></a>
+
 <div class="container">
-<div class="div-logo"></div>
-<br />
-<div class="row">
-  <div class="col-2 alinhar-centro"></div>
-  <div class="col-8 alinhar-centro caixa-branca">
-    <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8 caixa-branca">
       <div class="row">
-        <div class="col-6 alinhar-centro border-direita vertical">
-          <div class="mb-4 mt-2">
-            <h5 class="cor-text"><b>Cadastro</b></h5>
-          </div>
-          <form style="width: 80%" [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
-            <div class="mb-4">
-              <input type="text" class="form-control" placeholder="Nome Completo*" formControlName="nomeCompleto" ngModel required>
+        <!-- Formulário de cadastro -->
+        <div class="col-12 col-md-6 border-direita p-4">
+          <h5 class="cor-text text-center mb-4"><b>Cadastro</b></h5>
+          <form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Nome Completo*" formControlName="nomeCompleto" required>
             </div>
-            <div class="mb-4">
-              <input type="number" class="form-control" placeholder="CPF*" formControlName="cpf" ngModel required> <!-- Alterado de Cep para CPF -->
-              <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('cpf')">O CPF deve conter 11 números sem " - ".</div> <!-- Validação de CPF -->
+            <div class="mb-3">
+              <input type="number" class="form-control" placeholder="CPF*" formControlName="cpf" required>
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('cpf')">O CPF deve conter 11 números.</div>
             </div>
-            <div class="mb-4">
-              <input type="text" class="form-control" placeholder="Usuário*" formControlName="usuario" ngModel required>
-              <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('usuario')">O usuário deve conter pelo menos 6 caracteres.</div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Usuário*" formControlName="usuario" required>
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('usuario')">O usuário deve conter pelo menos 6 caracteres.</div>
             </div>
-            <div class="mb-4">
-              <input type="email" class="form-control" placeholder="E-mail*" formControlName="email" ngModel required>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="E-mail*" formControlName="email" required>
             </div>
-            <div class="mb-4">
-              <input type="password" class="form-control" placeholder="Senha*" formControlName="senha" ngModel required>
-              <div class="form-text text-danger col-12" *ngIf="isFormControlInvalid('senha')">A senha deve conter pelo menos 6 caracteres.</div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Senha*" formControlName="senha" required>
+              <div class="form-text text-danger" *ngIf="isFormControlInvalid('senha')">A senha deve conter pelo menos 6 caracteres.</div>
             </div>
-            <input type="checkbox" class="form-check-input me-2" [(ngModel)]="aceitouTermos" (change)="aceitouTermos = !aceitouTermos" required name="termos">
-            <span>Eu li e aceito os <a class="link cor-text" style="font-weight: bold; cursor: pointer;" (click)="abrirTermosCondicoes()">Termos e Condições</a>.</span>
-            <div class="mb-4">
-              <button class="btn btn-color form-control alinhar-centro" type="submit">Cadastrar-se</button>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" [(ngModel)]="aceitouTermos" (change)="aceitouTermos = !aceitouTermos" required>
+              <label class="form-check-label">Eu li e aceito os <a (click)="abrirTermosCondicoes()" class="link cor-text">Termos e Condições</a>.</label>
             </div>
+            <button type="submit" class="btn btn-color form-control">Cadastrar-se</button>
           </form>
-          <div class="tem-conta mb-4">
-            <p style="color: #747474">
-              Já tem sua conta?
-              <a routerLink="/login" class="cor-text"><b>Entrar em sua conta</b></a>
-            </p>
+          <div class="mt-3 text-center">
+            <p>Já tem sua conta? <a routerLink="/login" class="cor-text"><b>Entrar em sua conta</b></a></p>
           </div>
         </div>
-        <div class="col-6 vertical">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 p-0 d-flex justify-content-center flex-column align-items-center">
-                <div class="mt-2 mb-4">
-                  <h5 class="cor-text align-items-center d-flex justify-content-center"><b>Continuar com</b></h5>
-                </div>
-                <div class="mb-4">
-                  <button class="d-flex justify-content-start btn login-button align-items-center"><img src="../../../../assets/icons/google.png" width="25px" /><span> Entrar com <b style="color: rgb(225, 0, 0);">Google</b></span></button>
-                </div>
-                <div class="mb-4">
-                  <button class="d-flex justify-content-start btn login-button align-items-center"><img src="../../../../assets/icons/facebook.png" width="25px" /><span> Entrar com <b style="color: rgb(0, 0, 199);">Facebook</b></span></button>
-                </div>
-                <div class="mb-5">
-                  <button class="d-flex justify-content-start btn login-button align-items-center"> <img src="../../../../assets/icons/apple.png" width="26px" style="padding-bottom: 1px; " /><span> Entrar com <b style="color: black;">Apple</b></span></button>
-                </div>
-                <div class="tem-conta mb-4">
-                  <span style="color: #747474">
-                    Você é uma empresa? 
-                    <a routerLink="/criar-conta-empresa" class="cor-text text-reset"><b>Cadastre-se grátis aqui.</b></a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+        <!-- Opções de login com redes sociais -->
+        <div class="col-12 col-md-6 text-center p-4">
+          <h5 class="cor-text mb-4"><b>Continuar com</b></h5>
+          <button class="btn login-button mb-3 w-100"><img src="../../../../assets/icons/google.png" width="25px" /> Entrar com <b style="color: rgb(225, 0, 0);">Google</b></button>
+          <button class="btn login-button mb-3 w-100"><img src="../../../../assets/icons/facebook.png" width="25px" /> Entrar com <b style="color: rgb(0, 0, 199);">Facebook</b></button>
+          <button class="btn login-button mb-3 w-100"><img src="../../../../assets/icons/apple.png" width="25px" /> Entrar com <b style="color: black;">Apple</b></button>
+          <p class="mt-3">Você é uma empresa? <a routerLink="/criar-conta-empresa" class="cor-text"><b>Cadastre-se grátis aqui.</b></a></p>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-2 alinhar-centro"></div>
-</div>
 </div>
